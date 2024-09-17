@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-import { OrbitControls } from "@react-three/drei";
-
-export const Experience = () => {
-  return (
-    <>
-      <OrbitControls />
-      <mesh>
-        <boxGeometry />
-        <meshNormalMaterial />
-      </mesh>
-=======
 import { Environment, OrbitControls, Sky } from "@react-three/drei";
 import { Avatar } from "./Avatar"
 import { useControls } from "leva";
@@ -48,7 +36,6 @@ export const Experience = () => {
           <meshStandardMaterial color={"white"} />
         </mesh>
       </group>
->>>>>>> 9d3c5be (Initial commit)
     </>
   );
 };
