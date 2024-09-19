@@ -12,7 +12,7 @@ import * as THREE from 'three';
 
 export function Avatar(props) {
 const {animation} = props;
-console.log(props);
+
 
   const {headFollow, cursorFollow, wireframe} = useControls({
     headFollow: false,
@@ -51,11 +51,14 @@ console.log(props);
   })
 
   useEffect(() => {
-    actions[animation].reset().play();
+    if(actions[animation]){
+      actions[animation].reset().play();
+    }
+    
     return () => {
       actions[animation].reset().fadeOut(0.5).stop();
     }
-  }, [animation]);
+  }, [animation, headFollow, cursorFollow, wireframe]);
 
   useEffect(()=> {
 Object.values(materials).forEach((material) => {
